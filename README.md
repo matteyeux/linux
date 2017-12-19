@@ -1,5 +1,5 @@
 # linux
-pic.patch : used to fix this error when building kernel with GCC 5+(?): 
+pic.patch : used to fix this error when building kernel with GCC 5+(?):
 ```
 $ make
   CHK     include/config/kernel.release
@@ -15,3 +15,4 @@ Makefile:987: recipe for target 'prepare0' failed
 make: *** [prepare0] Error 2
 ```
 To apply patch : `patch Makefile pic.patch` <br> 
+It forces no-pie for distro compilers that enable pie by default
