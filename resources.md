@@ -4,7 +4,7 @@
 - [Linux Kernel Module Cheat](https://github.com/cirosantilli/linux-kernel-module-cheat)
 - [Access the Linux kernel using the /proc filesystem](https://www.ibm.com/developerworks/linux/library/l-proc/index.html)
 - [Kernel command using Linux system calls](https://www.ibm.com/developerworks/linux/library/l-system-calls/)
-
+- [Linux kernel doc](https://www.kernel.org/doc/html/v4.13/index.html)
 ### Linux Kernel Debugging
 - [Kernel debugging with Kprobes](https://www.ibm.com/developerworks/linux/library/l-kprobes/index.html)
 - [Kernel debugging for newbies](http://www.alexlambert.com/2017/12/18/kernel-debugging-for-newbies.html)
