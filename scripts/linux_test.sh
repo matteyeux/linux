@@ -19,11 +19,10 @@
 #   ---------------------------------------------------------------
 #    19/12/17 |     matteyeux      | Script creation
 #   ---------------------------------------------------------------
-#linux-stuff/linux-4.14.8/arch/x86_64/boot/bzImage
-bzImage="/home/mathieu/Documents/linux-stuff/linux-4.14.8/arch/x86_64/boot/bzImage"
 
+# copy your bzImage in this dir
 if [[ $1 == "qemu" ]];then 
-	qemu-system-x86_64 -snapshot -m 1GB -serial stdio -kernel ~/Documents/linux-stuff/linux-4.14.8/arch/x86_64/boot/bzImage -initrd kernel_tests/initramfs/initrd_x86_64.gz  -append "root=/dev/sda1 ignore_loglevel"
+	qemu-system-x86_64 -snapshot -m 1GB -serial stdio -kernel bzImage -initrd kernel_tests/initramfs/initrd_x86_64.gz  -append "root=/dev/sda1 ignore_loglevel"
 	exit 0
 fi
 mkdir kernel_tests && cd kernel_tests
