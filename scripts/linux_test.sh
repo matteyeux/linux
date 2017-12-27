@@ -19,17 +19,21 @@
 #   ---------------------------------------------------------------
 #    19/12/17 |     matteyeux      | Script creation
 #   ---------------------------------------------------------------
+#linux-stuff/linux-4.14.8/arch/x86_64/boot/bzImage
+bzImage="/home/mathieu/Documents/linux-stuff/linux-4.14.8/arch/x86_64/boot/bzImage"
 
-busybox_v="1.27.2"
-bzImage="/home/mathieu/Documents/linux-4.14.5/arch/x86_64/boot/bzImage"
-
+if [[ $1 == "qemu" ]];then 
+	qemu-system-x86_64 -snapshot -m 1GB -serial stdio -kernel ~/Documents/linux-stuff/linux-4.14.8/arch/x86_64/boot/bzImage -initrd kernel_tests/initramfs/initrd_x86_64.gz  -append "root=/dev/sda1 ignore_loglevel"
+	exit 0
+fi
 mkdir kernel_tests && cd kernel_tests
 # build busybox
 sudo apt-get install libncurses5-dev qemu-system-x86 -y 
-wget https://busybox.net/downloads/busybox-$busybox_v.tar.bz2
-tar jxvf busybox-1.27.2.tar.bz2
-cp config.busybox busybox-$busyboxv/.config
-cd busybox-$busyboxv/
+wget https://busybox.net/downloads/busybox-1.27.2.tar.bz2 -O busybox.tar.bz2
+tar jxvf busybox.tar.bz2
+mv busybox-1.27.2 busybox
+cp ../../resources/config.busybox busybox/.config
+cd busybox/
 make && sudo make install
 
 # build initrd
@@ -37,7 +41,7 @@ cd ..
 mkdir -p initramfs
 cd initramfs
 mkdir -pv {bin,sbin,etc,proc,sys,usr/{bin,sbin}}
-cp -av ../busybox-$busyboxv/_install/* .
+cp -av ../busybox/_install/* .
 
 
 # init script
