@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get install cmake qt5-default libqt5svg5-dev git 
+sudo apt-get install -y cmake qt5-default libqt5svg5-dev git 
 git clone https://github.com/radare/radare2
 cd radare2; ./sys/install.sh; cd ..
 
