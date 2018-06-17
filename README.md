@@ -29,7 +29,7 @@ Install some packages :
 
 To build we first need to install radare2 :
 - clone radare2 : `git clone https://github.com/radareorg/radare2`
-- cd to rafare2 directory then run install script : `cd radare2; ./sys/install.sh; cd ..`
+- cd to radare2 directory then run install script : `cd radare2; ./sys/install.sh; cd ..`
 
 Once r2 is built we can now build cutter :
 - clone cutter : `git clone https://github.com/radareorg/cutter`
